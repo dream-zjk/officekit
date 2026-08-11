@@ -116,6 +116,50 @@ The server exposes 14 tools: `extract_text`, `view_outline`, `view_stats`,
 `view_issues`, `document_info`, `validate_document`, `create_document`,
 `merge_template`, `get`, `set_value`, `add`, `remove`, `batch`, `import_csv`.
 
+### Using with AI coding agents (Claude Code / Codex)
+
+Once `officekit[mcp]` is installed, point your agent at the server so it can
+read and edit Office documents directly. No code is needed — just add the server
+to the agent's MCP config.
+
+**Claude Code** — drop this into `.mcp.json` at your project root (or run
+`claude mcp add --transport stdio officekit -- officekit mcp`):
+
+```jsonc
+// .mcp.json
+{
+  "mcpServers": {
+    "officekit": {
+      "command": "officekit",
+      "args": ["mcp"]
+    }
+  }
+}
+```
+
+**Codex** — add the same server to its config (e.g. `codex.json` /
+`~/.codex/codex.json`):
+
+```jsonc
+// codex.json
+{
+  "mcpServers": {
+    "officekit": {
+      "command": "officekit",
+      "args": ["mcp"]
+    }
+  }
+}
+```
+
+Any MCP-capable agent (Cursor, VS Code, Zed, …) works the same way: command
+`officekit`, args `["mcp"]`. After connecting, you can just ask, *"Update the
+title on slide 1 of deck.pptx to 'Quarterly Review'"* and the agent drives the
+document through the MCP tools.
+
+> The server must be on your `PATH`. If `officekit` isn't global, use an absolute
+> path for `command`, or run the agent from a shell where the venv is active.
+
 ## Library usage
 
 ```python
