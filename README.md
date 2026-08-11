@@ -1,5 +1,9 @@
 # officekit
 
+<p align="center">
+  <img src="assets/cover.png" alt="officekit — Office document automation for humans and AI agents" width="768">
+</p>
+
 [![CI](https://github.com/dream-zjk/officekit/actions/workflows/ci.yml/badge.svg)](https://github.com/dream-zjk/officekit/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/python-3.8%2B-blue.svg)](https://www.python.org)

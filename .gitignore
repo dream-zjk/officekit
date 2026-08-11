@@ -30,3 +30,7 @@ env/
 *.generated.docx
 *.generated.xlsx
 *.generated.pptx
+
+# API generator debug output
+assets/*.raw.json
+assets/*.url.txt
