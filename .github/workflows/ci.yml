@@ -25,3 +25,7 @@ jobs:
           pip install -e ".[test]"
       - name: Test
         run: pytest -q
+      - name: Install MCP extra
+        run: pip install -e ".[mcp]"
+      - name: MCP import smoke test
+        run: python -c "import officekit.mcp_server as m; assert len(m._TOOLS) == 14"

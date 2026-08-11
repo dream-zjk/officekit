@@ -8,6 +8,7 @@ from .core import (
     merge_template,
     validate_document,
 )
+from . import ops, view, batch, importer
 
 __all__ = [
     "__version__",
@@ -16,4 +17,8 @@ __all__ = [
     "merge_template",
     "document_info",
     "validate_document",
+    "ops",
+    "view",
+    "batch",
+    "importer",
 ]

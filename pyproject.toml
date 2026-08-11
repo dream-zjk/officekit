@@ -31,6 +31,7 @@ Issues = "https://github.com/dream-zjk/officekit/issues"
 
 [project.optional-dependencies]
 test = ["pytest>=7.0"]
+mcp = ["mcp>=1.2.0"]
 
 [project.scripts]
 officekit = "officekit.cli:main"
