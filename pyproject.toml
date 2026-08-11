@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "officekit"
+version = "0.1.0"
+description = "Friendly Office document automation for humans and AI agents (docx/xlsx/pptx)."
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [{ name = "ZHANG8", email = "geminiaio3o9@gmail.com" }]
+keywords = ["office", "docx", "xlsx", "pptx", "cli", "automation", "agent", "ai"]
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Developers",
+    "Topic :: Office/Business :: Office Suites",
+]
+dependencies = [
+    "python-docx>=1.1.0",
+    "openpyxl>=3.1.0",
+    "python-pptx>=0.6.23",
+]
+
+[project.urls]
+Homepage = "https://github.com/dream-zjk/officekit"
+Repository = "https://github.com/dream-zjk/officekit"
+Issues = "https://github.com/dream-zjk/officekit/issues"
+
+[project.optional-dependencies]
+test = ["pytest>=7.0"]
+
+[project.scripts]
+officekit = "officekit.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
